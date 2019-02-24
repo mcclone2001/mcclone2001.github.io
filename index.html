@@ -59,7 +59,17 @@
           .noScreen{}
       }
 
-      .inline { display: inline;  }
+      .inline {display: inline;}
+
+      @media only screen and (min-width: 1200px) 
+      {
+          .menor1200px{display: none;}
+      }
+
+      @media only screen and (max-width: 1200px) 
+      {
+          .mayor1200px{display: none;}
+      }
     </style>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
@@ -67,28 +77,29 @@
   </head>
 
   <body>
-    <!-- WIP
     <input type="checkbox" id="nav--super-vertical-responsive">
-    <label for="nav--super-vertical-responsive">Menú</label>
-    <aside class="nav--super-vertical g--2 g-m--12">
+    <aside class="nav--super-vertical g--2 g-m--12 text-center noPrint">
       <div class="g--12 no-margin-vertical">
-        <amp-img alt="A view of the sea"
-          src="http://lorempixel.com/300/150/"
-          width="300"
-          height="150"
-          layout="responsive">
-        </amp-img>
+        <amp-img alt="Iván Quiñones"
+            src="IvanQuinones.jpg"
+            width="200"
+            height="200">
+          </amp-img>
+        <h1 class="no-margin-vertical">Iván Quiñones</h1>
       </div>
-      <div class="m--1 g--10"><a href="https://www.example.com/venues/amp#party">¿Qué es el ambar?</a></div>
-      <div class="m--1 g--10">¿Es seguro?</div>
-      <div class="m--1 g--10">¿Es auténtico?</div>
+      <div class="m--1 g--10 no-margin-vertical"><a href="#educacion">Educación</a></div>
+      <div class="m--1 g--10 no-margin-vertical"><a href="#experiencia">Experiencia</a></div>
+      <div class="m--1 g--10 no-margin-vertical"><a href="#herramientas">Herramientas preferidas</a></div>
+      <div class="m--1 g--10 no-margin-vertical"><a href="#metodologia">Metodología</a></div>
+      <div class="m--1 g--10 no-margin-vertical"><a href="#contacto">Contacto</a></div>
+      <div class="m--1 g--10 no-margin-vertical"><a href="#personalidad">Personalidad</a></div>
+      <div class="m--1 g--10 no-margin-vertical"><a href="#alcance">¿Qué puede hacer?</a></div>
     </aside>
-    <main class="g--10 m--2 g-m--12 m-m--0 no-margin-vertical">
-  -->
 
-    <main class="g--12 no-margin-vertical noPrint">
+    <main class="g--10 m--2 g-m--12 m-m--0 no-margin-vertical noPrint">
 
-      <div class="g--10 m--1 container container--wrap--s card fade-in-from-top">
+      <a id="inicio"></a>
+      <div class="g--10 m--1 container container--wrap--s card fade-in-from-top menor1200px">
         <div class="g--4 g-s--12 text-center no-margin-vertical fade-in-from-top">
           <amp-img alt="Iván Quiñones"
             src="IvanQuinones.jpg"
@@ -101,6 +112,7 @@
         </div>
       </div>
 
+      <a id="educacion"></a>
       <div class="g--10 m--1 card fade-in-from-top">
         <h2><i class="fas fa-university"></i> Educación</h2>
         <div class="g--8 m--4 g-t--10 m-t--1">
@@ -110,8 +122,9 @@
         </div>
       </div>
 
+      <a id="experiencia"></a>
       <div class="g--10 m--1 card fade-in-from-top">
-        <h2><i class="fas fa-award"></i> Experiencia como Líder de proyectos</h2>
+        <h2><i class="fas fa-award"></i> Experiencia como Líder de desarrollo de software</h2>
         <div class="g--12 container container--wrap--s">
           <div class="g--4 g-s--12 text-center">
             2017 - Actual
@@ -154,6 +167,7 @@
         </div>
       </div>
 
+      <a id="herramientas"></a>
       <div class="g--10 m--1 card">
         <h2><i class="fas fa-tools"></i> Herramientas preferidas</h2>
         <div class="g--8 m--4 g-t--10 m-t--1">
@@ -168,6 +182,7 @@
         </div>
       </div>
 
+      <a id="metodologia"></a>
       <div class="g--10 m--1 card">
         <h2><i class="fas fa-flask"></i> Metodología</h2>
         <div class="g--8 m--4 g-t--10 m-t--1">
@@ -181,6 +196,7 @@
         </div>
       </div>
 
+      <a id="contacto"></a>
       <div class="g--10 m--1 card">
         <h2><i class="fas fa-user-circle"></i> Contacto</h2>
         <div class="g--8 m--4 g-t--10 m-t--1">          
@@ -190,6 +206,7 @@
         </div>
       </div>
 
+      <a id="personalidad"></a>
       <div class="g--10 m--1 card">
         <h2><i class="fas fa-sliders-h"></i> Personalidad</h2>
         <div class="g--12 container container--wrap--s">
@@ -234,8 +251,9 @@
         </div>
       </div>
 
+      <a id="alcance"></a>
       <div class="g--10 m--1 card">
-        <h2><i class="fas fa-fist-raised"></i> ¿Qué puede hacer Iván por mí empresa?</h2>
+        <h2><i class="fas fa-fist-raised"></i> ¿Qué puede hacer Iván?</h2>
         <div class="g--12 container container--wrap--s">
           <div class="g--4 g-s--12 text-center">
             <h3>Soluciones de software</h3>
@@ -287,7 +305,7 @@
       </div>
       <div class="g--12 no-margin-vertical">
         <div class="g--12 no-margin-vertical">
-          <h3><i class="fas fa-award"></i> Experiencia como Líder de proyectos</h3>
+          <h3><i class="fas fa-award"></i> Experiencia como Líder de desarrollo de software</h3>
         </div>        
         <div class="g--11 m--1 no-margin-vertical">
           <div class="g--12 no-margin-vertical">
