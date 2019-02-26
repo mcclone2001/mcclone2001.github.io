@@ -65,6 +65,8 @@
     <div class="g--10 m--1">
       <h1>Iván Quiñones</h1>
       <h2>Blog</h2>
+      <div id="articulo_destacado">
+      </div>
       <div id="entradas">
       </div>
 
@@ -74,17 +76,45 @@
   <script>
     whenAvailable("showdown", function(s){
       whenAvailable("axios", function(x){
-        axios.get("blog/20190224T1620.md")
-          .then(function(response){
-            console.log(mdAHtml(response.data));
-            agregarEntrada(mdAHtml(response.data));
-          })
-          .catch(function(error){
-            console.log(error);
-          });
-
+        cargarEntradas("blog/entradas.json");
       });
     });
+
+    function cargarEntradas(url) {
+      axios.get(url)
+        .then(function(response){
+          console.log(response.data);
+          renderearListaDeEntradas(response.data.entradas,"entradas");
+        })
+        .catch(function(error){
+          console.log(error);
+        });
+    }
+
+    function renderearListaDeEntradas(entradas,divId) {
+      entradas.forEach(function(element,index){
+        if(index==0) {
+          cargarArticulo(element.titulo,element.fecha,element.archivo_markdown,'articulo_destacado');
+        } else {
+          document.getElementById(divId).appendChild( htmlToElement('<div>'+renderearColapsable(element,index)+'</div>') );
+        }        
+      });      
+    }
+
+    function cargarArticulo(titulo,fecha,archivo_markdown,divId) {
+      console.log("cargar articulo "+archivo_markdown+" en "+divId);
+      axios.get("blog/"+archivo_markdown)
+            .then(function(response){
+              agregarEntrada(mdAHtml('<h2>'+titulo+'</h2><i>'+fecha+'</i><p>'+response.data+'</p>'),divId);
+            })
+            .catch(function(error){
+              console.log(error);
+            });
+    }
+
+    function renderearColapsable(elemento,indice) {
+      return '<button onclick="cargarArticulo(\''+elemento.titulo+'\',\''+elemento.fecha+'\',\''+elemento.archivo_markdown+'\',\'elemento'+indice+'\')">Leer '+elemento.titulo+' publicado el '+elemento.fecha+'</button><div id="elemento'+indice+'"></div>';
+    }
 
     // https://stackoverflow.com/questions/8618464/how-to-wait-for-another-js-to-load-to-proceed-operation
     function whenAvailable(name, callback) {
@@ -104,8 +134,8 @@
       return(html);
     }
 
-    function agregarEntrada(html){
-      document.getElementById('entradas').appendChild( htmlToElement('<div>'+html+'</div>') );
+    function agregarEntrada(html,divId){
+      document.getElementById(divId).appendChild( htmlToElement('<div>'+html+'</div>') );
     }
 
     // https://stackoverflow.com/questions/494143/creating-a-new-dom-element-from-an-html-string-using-built-in-dom-methods-or-pro
