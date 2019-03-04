@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mcclone2001.github.com/blog/posts/ivanq-explora-the-twelve-factor-app/</loc>
+    <lastmod>2019-03-01T21:12:04-06:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://mcclone2001.github.com/blog/categories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
@@ -10,6 +17,14 @@
   
   <url>
     <loc>https://mcclone2001.github.com/blog/</loc>
+    <lastmod>2019-03-01T21:12:04-06:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mcclone2001.github.com/blog/posts/</loc>
+    <lastmod>2019-03-01T21:12:04-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>

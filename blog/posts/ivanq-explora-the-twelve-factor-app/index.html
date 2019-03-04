@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>El blog de Iván Quiñones  | The Twelve Factor App</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.54.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/blog/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="The Twelve Factor App" />
+<meta property="og:description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un resumen de los 12 factores, y es el inicio de una serie de 13 artículos dirigidos a analizar cada uno de estos puntos.
+Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclusivamente a los flujos de trabajo con Heroku, el manifiesto me ha parecido interesante dado que varios de los puntos están evidentemente inspirados por los movimientos de DevOps y la arquitectura de microservicios, pero principalmente por ser una síntesis de los 6 años de experiencia de Wiggins como CTO de una de las primeras plataformas en la nube." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mcclone2001.github.com/blog/posts/ivanq-explora-the-twelve-factor-app/" />
+<meta property="article:published_time" content="2019-03-01T21:12:04-06:00"/>
+<meta property="article:modified_time" content="2019-03-01T21:12:04-06:00"/>
+
+<meta itemprop="name" content="The Twelve Factor App">
+<meta itemprop="description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un resumen de los 12 factores, y es el inicio de una serie de 13 artículos dirigidos a analizar cada uno de estos puntos.
+Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclusivamente a los flujos de trabajo con Heroku, el manifiesto me ha parecido interesante dado que varios de los puntos están evidentemente inspirados por los movimientos de DevOps y la arquitectura de microservicios, pero principalmente por ser una síntesis de los 6 años de experiencia de Wiggins como CTO de una de las primeras plataformas en la nube.">
+
+
+<meta itemprop="datePublished" content="2019-03-01T21:12:04-06:00" />
+<meta itemprop="dateModified" content="2019-03-01T21:12:04-06:00" />
+<meta itemprop="wordCount" content="1073">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Twelve Factor App"/>
+<meta name="twitter:description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un resumen de los 12 factores, y es el inicio de una serie de 13 artículos dirigidos a analizar cada uno de estos puntos.
+Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclusivamente a los flujos de trabajo con Heroku, el manifiesto me ha parecido interesante dado que varios de los puntos están evidentemente inspirados por los movimientos de DevOps y la arquitectura de microservicios, pero principalmente por ser una síntesis de los 6 años de experiencia de Wiggins como CTO de una de las primeras plataformas en la nube."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://mcclone2001.github.com/blog" class="f3 fw2 hover-white no-underline white-90 dib">
+      El blog de Iván Quiñones
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">The Twelve Factor App</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-03-01T21:12:04-06:00">March 1, 2019</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href="https://12factor.net/">&ldquo;The twelve-factor app&rdquo;</a> es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.</p>
+
+<p>Esta publicación es un resumen de los 12 factores, y es el inicio de una serie de 13 artículos dirigidos a analizar cada uno de estos puntos.</p>
+
+<p>Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclusivamente a los flujos de trabajo con Heroku, el manifiesto me ha parecido interesante dado que varios de los puntos están evidentemente inspirados por los movimientos de DevOps y la arquitectura de microservicios, pero principalmente por ser una síntesis de los 6 años de experiencia de Wiggins como CTO de una de las primeras plataformas en la nube.</p>
+
+<p>1.- Código Base</p>
+
+<p>Gestionar el código mediante sistemas de control de versiones (Git, Subversion, etc.)</p>
+
+<p>El mismo código no debe repetirse en más de un repositorio, si es necesario reusar código debe hacerse separando dicho código en librerías (y por tanto en otro repositorio) que puedan enlazarse mediante gestores de dependencias (NPM, Composer, etc.)</p>
+
+<p>El código base puede desplegarse múltiples veces, un despliegue es una instancia de la aplicación que está en ejecución (El servidor de producción, el servidor de pruebas, el equipo del desarrollador, son todos instancias de la aplicación), aunque cada instancia puede tener una versión diferente (diferentes commits de un mismo repositorio)</p>
+
+<p>2.- Dependencias</p>
+
+<p>Las aplicaciones no deben depender de que en el sistema donde se ejecuten existan librerías especificas instaladas (p.ej. mi programa necesita que instales direct x versión 10.0 para que pueda arrancar), ni deben depender de que exista paquetería específica instalada en el sistema (ImageMagick, 7zip, curl), dado que no existe la seguridad de que existan en todos los entornos donde se desplieguen.</p>
+
+<p>Todas sus dependencias deben estar especificadas en un manifiesto de declaración de dependencias (cómo el Package.json de NPM, ó el Composer.json de Composer)</p>
+
+<p>La aplicación también debe funcionar dentro de entornos aislados que no puedan afectar al sistema donde se ejecutan (cómo Virtualenv para Python)</p>
+
+<p>3.- Configuraciones</p>
+
+<p>La configuración de una aplicación es todo lo que puede variar entre despliegues, por tanto deben estar fuera del código base. La prueba de fuego sería poder compartir el código base sin riesgo de que se expongan usuarios o contraseñas de ningún tipo.</p>
+
+<p>La recomendación es guardar la configuración en variables de entorno (Los viejos confiables comandos <code>SET</code> en windows y <code>EXPORT</code> en Linux)</p>
+
+<p>4.- Backing services</p>
+
+<p>Los &ldquo;backing services&rdquo; son los servicios que la aplicación consume (cómo bases de datos, almacenamiento de archivos, correos o cualquier otro servicio disponible a través de una API) estos servicios, sean locales o de terceros, deben poder cambiarse sin necesidad de hacer modificaciones al código base del sistema.</p>
+
+<p>Es decir, las URLs y credenciales de estos recursos conectados no deben formar parte del código base, si tu aplicación hace uso de una base de datos MariaDb y decides migrarla a otro servidor para escalar tu aplicación verticalmente, lo único que deberías necesitar es modificar las variables de entorno que tu aplicación utiliza para almacenar la URL, nombre de usuario y contraseña.</p>
+
+<p>5.- Construir, desplegar, ejecutar</p>
+
+<p>El código base se transforma en despliegue después de haber sido construida, desplegada y estar ejecutándose.</p>
+
+<p>Las aplicaciones 12 factor deben separa estas tres fases, un bug jamás debe resolverse en el código que se está ejecutando en el servidor, cada versión generada debe tener un identificador único y almacenarse en un sistema de archivado para, en caso de errores catastróficos, poder regresar a versiones anteriores con el menor impacto posible.</p>
+
+<p>6.- Procesos</p>
+
+<p>La aplicación se ejecuta como procesos sin estado, cualquier información que necesite debe almacenarse mediante backing services, los cuales sí pueden tener estados persistentes (como bases de datos, o sistemas de archivos), sin embargo, la aplicación puede almacenar información temporal directamente a sistemas de archivos, memoria, etc., siempre y cuando sea solo como caches temporales y no se espere que la información almacenada en ellos exista más allá de la ejecución de un proceso.</p>
+
+<p>7.- Asignación de puertos</p>
+
+<p>Las aplicaciones deben ser totalmente auto contenidas, es decir, no deben depender de un servidor web (cómo Apache, Nginx, IIS) para crear un servicio web público.</p>
+
+<p>Las aplicaciones deben ligarse a un puerto y a través de él publicar sus servicios, esto permite no solo que los consuma un cliente, sino que a su vez pueden convertirse en &lsquo;backing services&rsquo; para otras aplicaciones.</p>
+
+<p>8.- Concurrencia</p>
+
+<p>Las aplicaciones tienen la necesidad de escalarse en algún momento, escalar una aplicación verticalmente tiene un costo y límite, por tanto tratar a las aplicaciones como procesos permite que escalarlos horizontalmente sea fácil, únicamente es necesario crear nuevas instancias de la aplicación.</p>
+
+<p>Por tanto, es importante dividir la aplicación en distintos tipos de procesos, por ejemplo las peticiones web pueden resolverse con procesos diseñados para ser rápidos en ejecución y delegar las tareas largas a otro tipo de procesos, tomamos la inspiración del modelo de procesos de Unix.</p>
+
+<p>9.- Posibilidad de ser desechados</p>
+
+<p>Los procesos de las aplicaciones deben ser desechables, es decir deben poder ser iniciados o terminados en cualquier momento.</p>
+
+<p>Terminar un proceso significa dejar de recibir nuevas solicitudes y concluir las tareas de las solicitudes que ya estaban procesándose. Este enfoque facilita la escalabilidad del sistema y considerarlo, desde el diseño de la arquitectura, permite hacer una aplicación resistente a fallos, el diseño &ldquo;crash only&rdquo; es el mejor ejemplo de este concepto.</p>
+
+<p>10.- Paridad entre ambientes de desarrollo y producción</p>
+
+<p>Minimizar el tiempo que transcurre entre la codificación y la puesta en producción es vital para responder a los cambios del mercado, las aplicaciones deben desarrollarse en ambientes lo más parecidos posible a los ambientes en que se ejecutarán, para minimizar los errores implícitos en omitir esta práctica.</p>
+
+<p>11.- Historiales</p>
+
+<p>Los historiales deben verse como la transmisión de eventos ordenados y capturados de la salida de los procesos de la aplicación y de sus &lsquo;backing services&rsquo;.</p>
+
+<p>Dichos eventos se envían a la salida estándar y los entornos de ejecución deberán encargarse de indizarlos, analizarlos y almacenarlos, esto jamás será responsabilidad de la aplicación.</p>
+
+<p>12.- Procesos Administrativos</p>
+
+<p>Frecuentemente los desarrolladores desean ejecutar procesos administrativos pensados en ser ejecutados una sola vez, o de manera extemporánea, por ejemplo:
+    * Modificar estructuras de bases de datos
+    * Corregir registros
+    * Ejecutar diagnósticos</p>
+
+<p>Las aplicaciones deben proveer de un servicio mediante consola para poder ejecutar estos procesos, todas las operaciones de mantenimiento deben existir en el código base de la aplicación.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://mcclone2001.github.com/blog" >
+    &copy; 2019 El blog de Iván Quiñones
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/blog/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
