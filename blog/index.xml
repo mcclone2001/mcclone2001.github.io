@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>El blog de Iván Quiñones</title>
-    <link>https://mcclone2001.github.com/blog/</link>
+    <link>https://mcclone2001.github.io/blog/</link>
     <description>Recent content on El blog de Iván Quiñones</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-mx</language>
     <lastBuildDate>Fri, 01 Mar 2019 21:12:04 -0600</lastBuildDate>
     
-	<atom:link href="https://mcclone2001.github.com/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mcclone2001.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Twelve Factor App</title>
-      <link>https://mcclone2001.github.com/blog/posts/ivanq-explora-the-twelve-factor-app/</link>
+      <link>https://mcclone2001.github.io/blog/posts/ivanq-explora-the-twelve-factor-app/</link>
       <pubDate>Fri, 01 Mar 2019 21:12:04 -0600</pubDate>
       
-      <guid>https://mcclone2001.github.com/blog/posts/ivanq-explora-the-twelve-factor-app/</guid>
+      <guid>https://mcclone2001.github.io/blog/posts/ivanq-explora-the-twelve-factor-app/</guid>
       <description>&amp;ldquo;The twelve-factor app&amp;rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
 Esta publicación es un resumen de los 12 factores, y es el inicio de una serie de 13 artículos dirigidos a analizar cada uno de estos puntos.
 Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclusivamente a los flujos de trabajo con Heroku, el manifiesto me ha parecido interesante dado que varios de los puntos están evidentemente inspirados por los movimientos de DevOps y la arquitectura de microservicios, pero principalmente por ser una síntesis de los 6 años de experiencia de Wiggins como CTO de una de las primeras plataformas en la nube.</description>
