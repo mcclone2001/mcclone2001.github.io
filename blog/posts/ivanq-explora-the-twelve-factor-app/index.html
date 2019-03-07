@@ -17,7 +17,7 @@
 
     
     
-      <link href="/blog/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+      <link href="https://mcclone2001.github.io/blog/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
     
 
     
@@ -45,7 +45,7 @@ Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclu
 
 <meta itemprop="datePublished" content="2019-03-01T21:12:04-06:00" />
 <meta itemprop="dateModified" content="2019-03-01T21:12:04-06:00" />
-<meta itemprop="wordCount" content="1073">
+<meta itemprop="wordCount" content="1070">
 
 
 
@@ -78,7 +78,7 @@ Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclu
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/blog/posts/" title="Posts page">
+            <a class="hover-white no-underline white-90" href="https://mcclone2001.github.io/blog/posts/" title="Posts page">
               Posts
             </a>
           </li>
@@ -121,13 +121,15 @@ Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclu
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href="https://12factor.net/">&ldquo;The twelve-factor app&rdquo;</a> es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.</p>
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p><a href="https://12factor.net/">&ldquo;The twelve-factor app&rdquo;</a> es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.</p>
 
 <p>Esta publicación es un resumen de los 12 factores, y es el inicio de una serie de 13 artículos dirigidos a analizar cada uno de estos puntos.</p>
 
 <p>Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclusivamente a los flujos de trabajo con Heroku, el manifiesto me ha parecido interesante dado que varios de los puntos están evidentemente inspirados por los movimientos de DevOps y la arquitectura de microservicios, pero principalmente por ser una síntesis de los 6 años de experiencia de Wiggins como CTO de una de las primeras plataformas en la nube.</p>
 
-<p>1.- Código Base</p>
+<h2 id="1-código-base">1.- Código Base</h2>
 
 <p>Gestionar el código mediante sistemas de control de versiones (Git, Subversion, etc.)</p>
 
@@ -135,7 +137,7 @@ Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclu
 
 <p>El código base puede desplegarse múltiples veces, un despliegue es una instancia de la aplicación que está en ejecución (El servidor de producción, el servidor de pruebas, el equipo del desarrollador, son todos instancias de la aplicación), aunque cada instancia puede tener una versión diferente (diferentes commits de un mismo repositorio)</p>
 
-<p>2.- Dependencias</p>
+<h2 id="2-dependencias">2.- Dependencias</h2>
 
 <p>Las aplicaciones no deben depender de que en el sistema donde se ejecuten existan librerías especificas instaladas (p.ej. mi programa necesita que instales direct x versión 10.0 para que pueda arrancar), ni deben depender de que exista paquetería específica instalada en el sistema (ImageMagick, 7zip, curl), dado que no existe la seguridad de que existan en todos los entornos donde se desplieguen.</p>
 
@@ -143,62 +145,65 @@ Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclu
 
 <p>La aplicación también debe funcionar dentro de entornos aislados que no puedan afectar al sistema donde se ejecutan (cómo Virtualenv para Python)</p>
 
-<p>3.- Configuraciones</p>
+<h2 id="3-configuraciones">3.- Configuraciones</h2>
 
 <p>La configuración de una aplicación es todo lo que puede variar entre despliegues, por tanto deben estar fuera del código base. La prueba de fuego sería poder compartir el código base sin riesgo de que se expongan usuarios o contraseñas de ningún tipo.</p>
 
 <p>La recomendación es guardar la configuración en variables de entorno (Los viejos confiables comandos <code>SET</code> en windows y <code>EXPORT</code> en Linux)</p>
 
-<p>4.- Backing services</p>
+<h2 id="4-backing-services">4.- Backing services</h2>
 
 <p>Los &ldquo;backing services&rdquo; son los servicios que la aplicación consume (cómo bases de datos, almacenamiento de archivos, correos o cualquier otro servicio disponible a través de una API) estos servicios, sean locales o de terceros, deben poder cambiarse sin necesidad de hacer modificaciones al código base del sistema.</p>
 
 <p>Es decir, las URLs y credenciales de estos recursos conectados no deben formar parte del código base, si tu aplicación hace uso de una base de datos MariaDb y decides migrarla a otro servidor para escalar tu aplicación verticalmente, lo único que deberías necesitar es modificar las variables de entorno que tu aplicación utiliza para almacenar la URL, nombre de usuario y contraseña.</p>
 
-<p>5.- Construir, desplegar, ejecutar</p>
+<h2 id="5-construir-desplegar-ejecutar">5.- Construir, desplegar, ejecutar</h2>
 
 <p>El código base se transforma en despliegue después de haber sido construida, desplegada y estar ejecutándose.</p>
 
 <p>Las aplicaciones 12 factor deben separa estas tres fases, un bug jamás debe resolverse en el código que se está ejecutando en el servidor, cada versión generada debe tener un identificador único y almacenarse en un sistema de archivado para, en caso de errores catastróficos, poder regresar a versiones anteriores con el menor impacto posible.</p>
 
-<p>6.- Procesos</p>
+<h2 id="6-procesos">6.- Procesos</h2>
 
 <p>La aplicación se ejecuta como procesos sin estado, cualquier información que necesite debe almacenarse mediante backing services, los cuales sí pueden tener estados persistentes (como bases de datos, o sistemas de archivos), sin embargo, la aplicación puede almacenar información temporal directamente a sistemas de archivos, memoria, etc., siempre y cuando sea solo como caches temporales y no se espere que la información almacenada en ellos exista más allá de la ejecución de un proceso.</p>
 
-<p>7.- Asignación de puertos</p>
+<h2 id="7-asignación-de-puertos">7.- Asignación de puertos</h2>
 
 <p>Las aplicaciones deben ser totalmente auto contenidas, es decir, no deben depender de un servidor web (cómo Apache, Nginx, IIS) para crear un servicio web público.</p>
 
 <p>Las aplicaciones deben ligarse a un puerto y a través de él publicar sus servicios, esto permite no solo que los consuma un cliente, sino que a su vez pueden convertirse en &lsquo;backing services&rsquo; para otras aplicaciones.</p>
 
-<p>8.- Concurrencia</p>
+<h2 id="8-concurrencia">8.- Concurrencia</h2>
 
 <p>Las aplicaciones tienen la necesidad de escalarse en algún momento, escalar una aplicación verticalmente tiene un costo y límite, por tanto tratar a las aplicaciones como procesos permite que escalarlos horizontalmente sea fácil, únicamente es necesario crear nuevas instancias de la aplicación.</p>
 
 <p>Por tanto, es importante dividir la aplicación en distintos tipos de procesos, por ejemplo las peticiones web pueden resolverse con procesos diseñados para ser rápidos en ejecución y delegar las tareas largas a otro tipo de procesos, tomamos la inspiración del modelo de procesos de Unix.</p>
 
-<p>9.- Posibilidad de ser desechados</p>
+<h2 id="9-posibilidad-de-ser-desechados">9.- Posibilidad de ser desechados</h2>
 
 <p>Los procesos de las aplicaciones deben ser desechables, es decir deben poder ser iniciados o terminados en cualquier momento.</p>
 
 <p>Terminar un proceso significa dejar de recibir nuevas solicitudes y concluir las tareas de las solicitudes que ya estaban procesándose. Este enfoque facilita la escalabilidad del sistema y considerarlo, desde el diseño de la arquitectura, permite hacer una aplicación resistente a fallos, el diseño &ldquo;crash only&rdquo; es el mejor ejemplo de este concepto.</p>
 
-<p>10.- Paridad entre ambientes de desarrollo y producción</p>
+<h2 id="10-paridad-entre-ambientes-de-desarrollo-y-producción">10.- Paridad entre ambientes de desarrollo y producción</h2>
 
 <p>Minimizar el tiempo que transcurre entre la codificación y la puesta en producción es vital para responder a los cambios del mercado, las aplicaciones deben desarrollarse en ambientes lo más parecidos posible a los ambientes en que se ejecutarán, para minimizar los errores implícitos en omitir esta práctica.</p>
 
-<p>11.- Historiales</p>
+<h2 id="11-historiales">11.- Historiales</h2>
 
 <p>Los historiales deben verse como la transmisión de eventos ordenados y capturados de la salida de los procesos de la aplicación y de sus &lsquo;backing services&rsquo;.</p>
 
 <p>Dichos eventos se envían a la salida estándar y los entornos de ejecución deberán encargarse de indizarlos, analizarlos y almacenarlos, esto jamás será responsabilidad de la aplicación.</p>
 
-<p>12.- Procesos Administrativos</p>
+<h2 id="12-procesos-administrativos">12.- Procesos Administrativos</h2>
 
-<p>Frecuentemente los desarrolladores desean ejecutar procesos administrativos pensados en ser ejecutados una sola vez, o de manera extemporánea, por ejemplo:
-    * Modificar estructuras de bases de datos
-    * Corregir registros
-    * Ejecutar diagnósticos</p>
+<p>Frecuentemente los desarrolladores desean ejecutar procesos administrativos pensados en ser ejecutados una sola vez, o de manera extemporánea, por ejemplo:</p>
+
+<ul>
+<li>Modificar estructuras de bases de datos</li>
+<li>Corregir registros</li>
+<li>Ejecutar diagnósticos</li>
+</ul>
 
 <p>Las aplicaciones deben proveer de un servicio mediante consola para poder ejecutar estos procesos, todas las operaciones de mantenimiento deben existir en el código base de la aplicación.</p>
 <ul class="pa0">
@@ -239,7 +244,7 @@ Si bien ha recibido controversia, dado que los 12 factores se ajustan casi exclu
 
     
 
-  <script src="/blog/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="https://mcclone2001.github.io/blog/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

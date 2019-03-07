@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>El blog de Iván Quiñones  | Como crear un contenedor Docker en Windows</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.54.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://mcclone2001.github.io/blog/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Como crear un contenedor Docker en Windows" />
+<meta property="og:description" content="Docker es una plataforma de virtualización que te permite distribuir despliegues/servicios/aplicaciones en contenedores, dichos contenedores sin instancias de imagenes, y estas imagenes son instalaciones mínimas que te permiten ejecutar infinidad de aplicaciones.
+La mayoría de los contenedores son distribuciones linux como Alpine, diseñadas para ser compactas y veloces. Su principal ventaja sobre máquinas virtuales es que docker procura virtualizar directamente sobre la arquitectura nativa (Hyper-V) haciendo que los contenedores sean sumamente ligeros." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mcclone2001.github.io/blog/posts/tutorial-creacion-de-imagen-en-docker/" />
+<meta property="article:published_time" content="2019-03-06T21:12:04-06:00"/>
+<meta property="article:modified_time" content="2019-03-06T21:12:04-06:00"/>
+
+<meta itemprop="name" content="Como crear un contenedor Docker en Windows">
+<meta itemprop="description" content="Docker es una plataforma de virtualización que te permite distribuir despliegues/servicios/aplicaciones en contenedores, dichos contenedores sin instancias de imagenes, y estas imagenes son instalaciones mínimas que te permiten ejecutar infinidad de aplicaciones.
+La mayoría de los contenedores son distribuciones linux como Alpine, diseñadas para ser compactas y veloces. Su principal ventaja sobre máquinas virtuales es que docker procura virtualizar directamente sobre la arquitectura nativa (Hyper-V) haciendo que los contenedores sean sumamente ligeros.">
+
+
+<meta itemprop="datePublished" content="2019-03-06T21:12:04-06:00" />
+<meta itemprop="dateModified" content="2019-03-06T21:12:04-06:00" />
+<meta itemprop="wordCount" content="829">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Como crear un contenedor Docker en Windows"/>
+<meta name="twitter:description" content="Docker es una plataforma de virtualización que te permite distribuir despliegues/servicios/aplicaciones en contenedores, dichos contenedores sin instancias de imagenes, y estas imagenes son instalaciones mínimas que te permiten ejecutar infinidad de aplicaciones.
+La mayoría de los contenedores son distribuciones linux como Alpine, diseñadas para ser compactas y veloces. Su principal ventaja sobre máquinas virtuales es que docker procura virtualizar directamente sobre la arquitectura nativa (Hyper-V) haciendo que los contenedores sean sumamente ligeros."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://mcclone2001.github.io/blog" class="f3 fw2 hover-white no-underline white-90 dib">
+      El blog de Iván Quiñones
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mcclone2001.github.io/blog/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Como crear un contenedor Docker en Windows</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-03-06T21:12:04-06:00">March 6, 2019</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>Docker es una plataforma de virtualización que te permite distribuir despliegues/servicios/aplicaciones en contenedores, dichos contenedores sin instancias de imagenes, y estas imagenes son instalaciones mínimas que te permiten ejecutar infinidad de aplicaciones.</p>
+
+<p>La mayoría de los contenedores son distribuciones linux como Alpine, diseñadas para ser compactas y veloces. Su principal ventaja sobre máquinas virtuales es que docker procura virtualizar directamente sobre la arquitectura nativa (Hyper-V) haciendo que los contenedores sean sumamente ligeros.</p>
+
+<p>Pero cuidado si, como yo, usas virtualbox en windows, debes usar &ldquo;docker toolbox&rdquo;, puesto que desktop docker, al activar hyper-v, no dejará que virtual box pueda utilizarse.</p>
+
+<p>Ahora, ¡a embarrarse!</p>
+
+<h2 id="1-descargar-docker-toolbox">1.- Descargar Docker Toolbox</h2>
+
+<p><a href="https://download.docker.com/win/stable/DockerToolbox.exe">https://download.docker.com/win/stable/DockerToolbox.exe</a></p>
+
+<h2 id="2-instalar-docker-toolbox">2.- Instalar Docker Toolbox</h2>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-1.png" alt="Example image" /></p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-2.png" alt="Example image" /></p>
+
+<p>El instalador tratará de instalar Virtual Box y Git, si ya los tienes instalados en tu sistema asegurate de desmarcarlos.</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-3.png" alt="Example image" /></p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-4.png" alt="Example image" /></p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-5.png" alt="Example image" /></p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-6.png" alt="Example image" /></p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-7.png" alt="Example image" /></p>
+
+<p>Al terminar la instalación te dejará dos accesos directos en el menu de inicio.</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-8.png" alt="Example image" /></p>
+
+<p>Si el acceso directo a &ldquo;Docker Quickstar Terminal&rdquo; no funciona tendrás que corregirlo manualmente; hay que poner la ruta correcta donde se localiza el archivo bash.exe que viene en la instalación de Git.</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-8.5.png" alt="Example image" /></p>
+
+<h2 id="3-comprobar-la-instalación-de-docker">3.- Comprobar la instalación de Docker</h2>
+
+<p>Abre &ldquo;Docker Quickstar Terminal&rdquo;, es una terminal bash corriendo en Mingw32 (sí, ya se, ¿por qué no mejor lo hacemos todo en Linux y ya?), el resto del tutorial lo haremos desde esta consola.</p>
+
+<p>Puede tardar un par de minutos en iniciar la primera vez</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-9.png" alt="Example image" /></p>
+
+<p>Cuando veas la ballena, estaremos listos para continuar</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-10.png" alt="Example image" /></p>
+
+<p>Teclea el comando</p>
+
+<pre><code>docker run hello-world
+</code></pre>
+
+<p>Esto iniciara la descarga de una imagen de ejemplo y posteriormente la ejecutará, verás en la pantalla una salida donde reporte que Docker esta funcionando.</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-11.png" alt="Example image" /></p>
+
+<h2 id="4-crear-el-dockerfile">4.- Crear el Dockerfile</h2>
+
+<p>Con los siguientes comandos creamos una carpeta de prueba en el escritorio.</p>
+
+<pre><code>cd ~/desktop
+mkdir test
+cd test
+</code></pre>
+
+<p>El archivo Dockerfile es el conjunto de instrucciones que se ejecutan para construir la imagen, imagina que es la lista de los comandos que estas ejecutando en tu ventana de comandos durante una instalación.</p>
+
+<p>Crea un archivo con nombre &ldquo;Dockerfile&rdquo; (tal cual con mayúsculas y minúsculas) y guardalo en el escritorio en la carpeta <code>test</code> (puedes usar el block de notas) con el siguiente contenido:</p>
+
+<pre><code>FROM ubuntu:18.04
+MAINTAINER IvanQ &lt;mcclone2001@gmail.com&gt;
+RUN apt-get update &amp;&amp; apt-get install -y apache2 &amp;&amp; apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/*
+ENV APACHE_RUN_USER  www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR   /var/log/apache2
+ENV APACHE_PID_FILE  /var/run/apache2/apache2.pid
+ENV APACHE_RUN_DIR   /var/run/apache2
+ENV APACHE_LOCK_DIR  /var/lock/apache2
+ENV APACHE_LOG_DIR   /var/log/apache2
+RUN mkdir -p $APACHE_RUN_DIR
+RUN mkdir -p $APACHE_LOCK_DIR
+RUN mkdir -p $APACHE_LOG_DIR
+COPY index.html /var/www/html
+EXPOSE 80
+CMD [&quot;/usr/sbin/apache2&quot;, &quot;-D&quot;, &quot;FOREGROUND&quot;]
+</code></pre>
+
+<h2 id="5-crear-una-página-web-de-ejemplo">5.- Crear una página web de ejemplo</h2>
+
+<p>Agrega el siguiente contenido a un archivo <code>index.html</code> (tal cual con mayúsculas y minúsculas) a la carpeta <code>test</code> (nuevamente, puedes usar tu block de notas)</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;First APP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;People becoming Humans Again&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="6-construir-la-imagen">6.- Construir la imagen</h2>
+
+<p>Desde la ventana de comandos de Docker Quickstart Terminal lista el directorio para saber que tenemos los dos archivos necesarios <code>Dockerfile</code> e <code>index.html</code></p>
+
+<pre><code>ls
+</code></pre>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-12.png" alt="Example image" /></p>
+
+<p>Ejecuta</p>
+
+<pre><code>docker build ./ -t servidor:v1
+</code></pre>
+
+<p>Este comando se encargará de interpretar el archivo Dockerfile que creaste, descargará la imagen base y ejecutará los comandos indicados para instalar los programas y configurar tu imagen.</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-13.png" alt="Example image" /></p>
+
+<p>Puede tomarle un par de minutos dependiendo de tu velocidad de internet.</p>
+
+<p>Observa que la salida corresponde al archivo Dockerfile.</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-14.png" alt="Example image" /></p>
+
+<h2 id="7-instanciar-la-imagen">7.- Instanciar la imagen</h2>
+
+<p>Ejecuta</p>
+
+<pre><code>docker run -dit -p 1234:80 servidor:v1
+</code></pre>
+
+<p>Este comando le indica a docker que debe crear una instancia de la imagen que construiste e inmediatamente después la ejecutará, a esta instancia nos referimos como Contenedor.</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-15.png" alt="Example image" /></p>
+
+<p>El parámetro <code>-d</code> instruye a docker a ejecutar el contenedor como demonio, en segundo plano.</p>
+
+<p>Los parametros <code>-i</code> y <code>-i</code> permite que el contenedor disponga de una terminal a la que podras conectarte posteriormente con el comando <code>attach</code>.</p>
+
+<p>El parametro <code>-p 1234:80</code> redirecciona el puerto 1234 de tu equipo local hacia el puerto 80 del contenedor</p>
+
+<h2 id="8-comprueba-que-todo-esta-funcionando">8.- Comprueba que todo esta funcionando</h2>
+
+<p>Ejecuta</p>
+
+<pre><code>docker ps -a
+</code></pre>
+
+<p>Esto listará todos los contenedores que estan en ejecución</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-16.png" alt="Example image" /></p>
+
+<p>El campo <code>IMAGE</code> nos dice de que imagen se instanció cada contenedor.</p>
+
+<p>El campo <code>NAME</code> nos sirve para administrar cada contenedor, por defecto los nombres se generan automáticamente.</p>
+
+<p>En tu navegador dirígete a <a href="http://192.168.99.100/">http://192.168.99.100/</a> y debes ver tu página siendo servida por el Apache que instalamos en el contenedor</p>
+
+<p><img src="https://mcclone2001.github.io/blog/img/tutoriales/crear-contenedor-docker-en-windows/tutorial-imagen-docker-17.png" alt="Example image" /></p>
+
+<h2 id="anexo">Anexo</h2>
+
+<p>El comando <code>docker run</code> puede crear multiples contenedores desde la misma imagen, pero cada contenedor debe exponer sus servicios en puertos diferentes.</p>
+
+<p>Para detener un contenedor usa el comando <code>docker stop &lt;NOMBRE DE LA INSTANCIA&gt;</code>
+Por ejemplo:</p>
+
+<pre><code>docker stop hungry_nash
+</code></pre>
+
+<p>Detendrá la instancia de nombre &ldquo;hungry_nash&rdquo;</p>
+
+<p>Para iniciar un contenedor que esta detenido usa el comando <code>docker start &lt;NOMBRE DE LA INSTANCIA&gt;</code>
+Por ejemplo:</p>
+
+<pre><code>docker start hungry_nash
+</code></pre>
+
+<p>Para eliminar un contenedor usa el comando <code>docker rm &lt;NOMBRE DE LA INSTANCIA&gt;</code>, los contenedores deben estar detenidos para poder ser eliminados.
+Por ejemplo:</p>
+
+<pre><code>docker stop hungry_nash
+docker rm hungry_nash
+</code></pre>
+
+<p>Para crear el contenedor usa el comando <code>docker run</code> como en el paso 7</p>
+
+<pre><code>docker run -dit -p 1234:80 servidor:v1
+</code></pre>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://mcclone2001.github.io/blog" >
+    &copy; 2019 El blog de Iván Quiñones
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://mcclone2001.github.io/blog/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
