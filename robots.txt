@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://mcclone2001.github.io/sitemap.xml
