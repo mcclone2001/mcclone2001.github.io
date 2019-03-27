@@ -6,10 +6,23 @@
     <description>Recent content in Posts on El blog de Iván Quiñones</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-mx</language>
-    <lastBuildDate>Sun, 10 Mar 2019 21:12:04 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2019 21:12:04 -0600</lastBuildDate>
     
 	<atom:link href="https://mcclone2001.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Twelve Factor App</title>
+      <link>https://mcclone2001.github.io/blog/posts/the-twelve-factor-app-1-codigo-base/</link>
+      <pubDate>Mon, 25 Mar 2019 21:12:04 -0600</pubDate>
+      
+      <guid>https://mcclone2001.github.io/blog/posts/the-twelve-factor-app-1-codigo-base/</guid>
+      <description>&amp;ldquo;The twelve-factor app&amp;rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un breve análisis del primer punto.
+Te recomiendo leer el resumen de los doce puntos antes de continuar con este artículo.
+1.- Código Base  Gestionar el código mediante sistemas de control de versiones (Git, Subversion, etc.)
+El mismo código no debe repetirse en más de un repositorio, si es necesario reusar código debe hacerse separando dicho código en librerías (y por tanto en otro repositorio) que puedan enlazarse mediante gestores de dependencias (NPM, Composer, etc.</description>
+    </item>
     
     <item>
       <title>Docker Cheatsheet</title>

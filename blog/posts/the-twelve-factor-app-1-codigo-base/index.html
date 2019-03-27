@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>El blog de Iván Quiñones  | The Twelve Factor App</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.54.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://mcclone2001.github.io/blog/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="The Twelve Factor App" />
+<meta property="og:description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un breve análisis del primer punto.
+Te recomiendo leer el resumen de los doce puntos antes de continuar con este artículo.
+1.- Código Base  Gestionar el código mediante sistemas de control de versiones (Git, Subversion, etc.)
+El mismo código no debe repetirse en más de un repositorio, si es necesario reusar código debe hacerse separando dicho código en librerías (y por tanto en otro repositorio) que puedan enlazarse mediante gestores de dependencias (NPM, Composer, etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mcclone2001.github.io/blog/posts/the-twelve-factor-app-1-codigo-base/" />
+<meta property="article:published_time" content="2019-03-25T21:12:04-06:00"/>
+<meta property="article:modified_time" content="2019-03-25T21:12:04-06:00"/>
+
+<meta itemprop="name" content="The Twelve Factor App">
+<meta itemprop="description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un breve análisis del primer punto.
+Te recomiendo leer el resumen de los doce puntos antes de continuar con este artículo.
+1.- Código Base  Gestionar el código mediante sistemas de control de versiones (Git, Subversion, etc.)
+El mismo código no debe repetirse en más de un repositorio, si es necesario reusar código debe hacerse separando dicho código en librerías (y por tanto en otro repositorio) que puedan enlazarse mediante gestores de dependencias (NPM, Composer, etc.">
+
+
+<meta itemprop="datePublished" content="2019-03-25T21:12:04-06:00" />
+<meta itemprop="dateModified" content="2019-03-25T21:12:04-06:00" />
+<meta itemprop="wordCount" content="747">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Twelve Factor App"/>
+<meta name="twitter:description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un breve análisis del primer punto.
+Te recomiendo leer el resumen de los doce puntos antes de continuar con este artículo.
+1.- Código Base  Gestionar el código mediante sistemas de control de versiones (Git, Subversion, etc.)
+El mismo código no debe repetirse en más de un repositorio, si es necesario reusar código debe hacerse separando dicho código en librerías (y por tanto en otro repositorio) que puedan enlazarse mediante gestores de dependencias (NPM, Composer, etc."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://mcclone2001.github.io/blog" class="f3 fw2 hover-white no-underline white-90 dib">
+      El blog de Iván Quiñones
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mcclone2001.github.io/blog/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">The Twelve Factor App</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-03-25T21:12:04-06:00">March 25, 2019</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p><a href="https://12factor.net/">&ldquo;The twelve-factor app&rdquo;</a> es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.</p>
+
+<p>Esta publicación es un breve análisis del primer punto.</p>
+
+<p>Te recomiendo leer el <a href="{{ref &quot;ivanq-explora-the-twelve-factor-app.md&quot;}}">resumen de los doce puntos</a> antes de continuar con este artículo.</p>
+
+<h2 id="1-código-base">1.- Código Base</h2>
+
+<blockquote>
+<p>Gestionar el código mediante sistemas de control de versiones (Git, Subversion, etc.)</p>
+
+<p>El mismo código no debe repetirse en más de un repositorio, si es necesario reusar código debe hacerse separando dicho código en librerías (y por tanto en otro repositorio) que puedan enlazarse mediante gestores de dependencias (NPM, Composer, etc.)</p>
+
+<p>El código base puede desplegarse múltiples veces, un despliegue es una instancia de la aplicación que está en ejecución (El servidor de producción, el servidor de pruebas, el equipo del desarrollador, son todos instancias de la aplicación), aunque cada instancia puede tener una versión diferente (diferentes commits de un mismo repositorio)</p>
+</blockquote>
+
+<h2 id="sistema-de-control-de-versiones">Sistema de Control de Versiones</h2>
+
+<p>Para el que aún no conoce lo que es un sistema de control de versiones, wikipedia lo define como</p>
+
+<blockquote>
+<p>Se llama control de versiones a la gestión de los diversos cambios que se realizan sobre los elementos de algún producto o una configuración del mismo. Una versión, revisión o edición de un producto, es el estado en el que se encuentra el mismo en un momento dado de su desarrollo o modificación.</p>
+</blockquote>
+
+<p>Uno de los sistemas de control de versiones más conocidos es Git y es el utilizado en el mundialmente famoso GitHub (duh!).</p>
+
+<p>Sobresimplificando sus funcionalidades podemos decir que lo que hace es llevar un historial incremental de cambios sobre los archivos de un proyecto, permitiendo a un equipo de desarrolladores trabajar sobre el mismo proyecto y revisar, mezclar y distribuir los cambios realizados a todo el equipo de una manera ordenada y, dependiendo de las prácticas del equipo, controlada.</p>
+
+<p>Un repositorio es una carpeta, y todo su contenido, controlada por el sistema de control de versiones.</p>
+
+<p>Es posible organizar el código de un proyecto en multiples repositorios, especialmente cuando se considera que cierto código puede llegar a utilizarse en mas de un proyecto.</p>
+
+<p>Para ahondar en como explotar los sistemas de control de versiones, existen un par de flujos de trabajo orientados a git que son de gran interés, &ldquo;Git workflow&rdquo; y &ldquo;Trunk based development&rdquo;.</p>
+
+<h2 id="gestores-de-dependencias">Gestores de Dependencias</h2>
+
+<p>Actualmente es común que en todos los proyectos se hace uso de librerias de terceros, buscando obtener la mayor velocidad de desarrollo posible se evaluan librerias, frameworks y utilidades, principalmente de código abierto, que proveen de funcionalidades cuyo costo de producción puede ser de moderado a alto, y por tanto preferimos no reinventar la rueda.</p>
+
+<p>Es también común que al no tener el control sobre el desarrollo de estas librerías ocurran actualizaciones a estas, que inserten algún bug o modifiquen la API que proveen, y esto en consecuencia crea problemas difíciles de predecir en nuestro sistema.</p>
+
+<p>Por tanto usualmente decidimos &ldquo;congelar&rdquo; las versiones de las librerías que utilizamos para asegurar estabilidad durante nuestro desarrollo y despliegue en producción.</p>
+
+<p>Las herramientas de control de dependencias nos permiten gestionar facilmente que librerías y que versiones de las mismas se están utilizando.</p>
+
+<p>Algunas de las herramientas de control de dependencias (también conocidos como &ldquo;package managers&rdquo;) más populares son NPM para Javascript, PIP para Python y Composer para PHP.</p>
+
+<p>Mediante manifestos de dependencias es posible garantizar que un proyecto puede ser ejecutado o recompilado en distintos entornos sin la dificultad que implica administrar los árboles de dependencias que existen entre las muchas librerías del proyecto.</p>
+
+<h2 id="despliegues">Despliegues</h2>
+
+<p>Un despliegue es una ejecución de tu código fuente.</p>
+
+<p>Suponiendo que tienes un software X, cada equipo que esta ejecutando dicho software es un despliegue del mismo.</p>
+
+<p>Mientras que todos los equipos están ejecutando la misma versión del software todos compartiran el mismo código base.</p>
+
+<p>Cuando modifiques el software y la mita de los equipos esten ejecutando la versión anterior y la otra mitad la nueva, todos siguen siendo despliegues del mismo código base, pero de dos versiones distinas del mismo.</p>
+
+<p>Una de las recomendaciones más frecuentes para minimizar problemas durante los despliegues es que los desarrolladores dispongan de un ambiente de trabajo tan cercano como sea posible a los ambientes de producción en los que el software se ejecutará.</p>
+
+<p>Es una práctica común el uso de contenedores para proveer de estos ambientes preconfigurados y reducir la posibilidad de que un desarrollador trabaje en un ambiente distinto y caigamos en aquella famosa situación de &ldquo;Profe en mi máquina si jalaba&rdquo;.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://mcclone2001.github.io/blog" >
+    &copy; 2019 El blog de Iván Quiñones
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://mcclone2001.github.io/blog/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
