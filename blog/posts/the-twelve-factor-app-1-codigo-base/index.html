@@ -49,7 +49,7 @@ El mismo código no debe repetirse en más de un repositorio, si es necesario re
 
 <meta itemprop="datePublished" content="2019-03-25T21:12:04-06:00" />
 <meta itemprop="dateModified" content="2019-03-25T21:12:04-06:00" />
-<meta itemprop="wordCount" content="747">
+<meta itemprop="wordCount" content="748">
 
 
 
@@ -133,7 +133,7 @@ El mismo código no debe repetirse en más de un repositorio, si es necesario re
 
 <p>Esta publicación es un breve análisis del primer punto.</p>
 
-<p>Te recomiendo leer el <a href="{{ref &quot;ivanq-explora-the-twelve-factor-app.md&quot;}}">resumen de los doce puntos</a> antes de continuar con este artículo.</p>
+<p>Te recomiendo leer el <a href="https://mcclone2001.github.io/blog/posts/ivanq-explora-the-twelve-factor-app/">resumen de los doce puntos</a> antes de continuar con este artículo.</p>
 
 <h2 id="1-código-base">1.- Código Base</h2>
 
@@ -159,19 +159,19 @@ El mismo código no debe repetirse en más de un repositorio, si es necesario re
 
 <p>Un repositorio es una carpeta, y todo su contenido, controlada por el sistema de control de versiones.</p>
 
-<p>Es posible organizar el código de un proyecto en multiples repositorios, especialmente cuando se considera que cierto código puede llegar a utilizarse en mas de un proyecto.</p>
+<p>Es posible organizar el código de un proyecto en múltiples repositorios, especialmente cuando se considera que cierto código puede llegar a utilizarse en mas de un proyecto.</p>
 
 <p>Para ahondar en como explotar los sistemas de control de versiones, existen un par de flujos de trabajo orientados a git que son de gran interés, &ldquo;Git workflow&rdquo; y &ldquo;Trunk based development&rdquo;.</p>
 
 <h2 id="gestores-de-dependencias">Gestores de Dependencias</h2>
 
-<p>Actualmente es común que en todos los proyectos se hace uso de librerias de terceros, buscando obtener la mayor velocidad de desarrollo posible se evaluan librerias, frameworks y utilidades, principalmente de código abierto, que proveen de funcionalidades cuyo costo de producción puede ser de moderado a alto, y por tanto preferimos no reinventar la rueda.</p>
+<p>Actualmente es común que en todos los proyectos se hace uso de librerías de terceros, buscando obtener la mayor velocidad de desarrollo posible se evalúan librerías, frameworks y utilidades, principalmente de código abierto, que proveen de funcionalidades cuyo costo de producción puede ser de moderado a alto, y por tanto preferimos no reinventar la rueda.</p>
 
 <p>Es también común que al no tener el control sobre el desarrollo de estas librerías ocurran actualizaciones a estas, que inserten algún bug o modifiquen la API que proveen, y esto en consecuencia crea problemas difíciles de predecir en nuestro sistema.</p>
 
 <p>Por tanto usualmente decidimos &ldquo;congelar&rdquo; las versiones de las librerías que utilizamos para asegurar estabilidad durante nuestro desarrollo y despliegue en producción.</p>
 
-<p>Las herramientas de control de dependencias nos permiten gestionar facilmente que librerías y que versiones de las mismas se están utilizando.</p>
+<p>Las herramientas de control de dependencias nos permiten gestionar fácilmente que librerías y que versiones de las mismas se están utilizando.</p>
 
 <p>Algunas de las herramientas de control de dependencias (también conocidos como &ldquo;package managers&rdquo;) más populares son NPM para Javascript, PIP para Python y Composer para PHP.</p>
 
@@ -183,13 +183,13 @@ El mismo código no debe repetirse en más de un repositorio, si es necesario re
 
 <p>Suponiendo que tienes un software X, cada equipo que esta ejecutando dicho software es un despliegue del mismo.</p>
 
-<p>Mientras que todos los equipos están ejecutando la misma versión del software todos compartiran el mismo código base.</p>
+<p>Mientras que todos los equipos están ejecutando la misma versión del software todos compartirán el mismo código base.</p>
 
-<p>Cuando modifiques el software y la mita de los equipos esten ejecutando la versión anterior y la otra mitad la nueva, todos siguen siendo despliegues del mismo código base, pero de dos versiones distinas del mismo.</p>
+<p>Cuando modifiques el software y la mita de los equipos estén ejecutando la versión anterior y la otra mitad la nueva, todos siguen siendo despliegues del mismo código base, pero de dos versiones distintas del mismo.</p>
 
 <p>Una de las recomendaciones más frecuentes para minimizar problemas durante los despliegues es que los desarrolladores dispongan de un ambiente de trabajo tan cercano como sea posible a los ambientes de producción en los que el software se ejecutará.</p>
 
-<p>Es una práctica común el uso de contenedores para proveer de estos ambientes preconfigurados y reducir la posibilidad de que un desarrollador trabaje en un ambiente distinto y caigamos en aquella famosa situación de &ldquo;Profe en mi máquina si jalaba&rdquo;.</p>
+<p>Es una práctica común el uso de contenedores para proveer de estos ambientes pre configurados y reducir la posibilidad de que un desarrollador trabaje en un ambiente distinto y caigamos en aquella famosa situación de &ldquo;Profe en mi máquina sí jalaba&rdquo;.</p>
 <ul class="pa0">
   
 </ul>
