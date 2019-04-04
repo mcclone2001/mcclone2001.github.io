@@ -132,11 +132,8 @@ El mismo código no debe repetirse en más de un repositorio, si es necesario re
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Construir una imagen docker build &lt;Ubicación el archivo Dockerfile&gt; -t &lt;nombre de imagen&gt;  Instalar un contenedor --name Para indicar el nombre del contenedor
--d Para ejecutar como demonio
--it para disponer de entrada estandar y TTY
--v &lt;ruta local&gt;:&lt;ruta en el contenedor&gt; para compartir una carpeta entre el host y el contenedor
--p &lt;puerto local&gt;:&lt;puerto en el contenedor&gt; para redirigir el tráfico de un puerto en el host al contenedor
+      Construir una imagen --build-arg &lt;nombre argumento&gt;=&lt;valor&gt; Para pasar parametros al Dockerfile, únicamente estarán disponibles en la instrucción docker build, si deseas que los parametros esten disponibles durnate la instruccion docker run ó docker start debes asignar el build-arg a una variable de entorno ENV &lt;nombre variable de entorno&gt;=${&lt;nombre argumento&gt;}
+docker build &lt;Ubicación del archivo Dockerfile&gt; -t &lt;nombre de imagen&gt;  Instalar un contenedor --name Para indicar el nombre del contenedor
     </div>
   </div>
 </div>
