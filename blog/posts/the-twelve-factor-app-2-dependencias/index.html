@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>El blog de Iván Quiñones  | The Twelve Factor App - Dependencias</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.54.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://mcclone2001.github.io/blog/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="The Twelve Factor App - Dependencias" />
+<meta property="og:description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un breve análisis del segundo punto.
+Te recomiendo leer el resumen de los doce puntos antes de continuar con este artículo.
+2.- Dependencias  Las aplicaciones no deben depender de que en el sistema donde se ejecuten existan librerías especificas instaladas (p.ej. mi programa necesita que instales direct x versión 10." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mcclone2001.github.io/blog/posts/the-twelve-factor-app-2-dependencias/" />
+<meta property="article:published_time" content="2019-04-09T21:12:04-06:00"/>
+<meta property="article:modified_time" content="2019-04-09T21:12:04-06:00"/>
+
+<meta itemprop="name" content="The Twelve Factor App - Dependencias">
+<meta itemprop="description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un breve análisis del segundo punto.
+Te recomiendo leer el resumen de los doce puntos antes de continuar con este artículo.
+2.- Dependencias  Las aplicaciones no deben depender de que en el sistema donde se ejecuten existan librerías especificas instaladas (p.ej. mi programa necesita que instales direct x versión 10.">
+
+
+<meta itemprop="datePublished" content="2019-04-09T21:12:04-06:00" />
+<meta itemprop="dateModified" content="2019-04-09T21:12:04-06:00" />
+<meta itemprop="wordCount" content="755">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Twelve Factor App - Dependencias"/>
+<meta name="twitter:description" content="&ldquo;The twelve-factor app&rdquo; es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.
+Esta publicación es un breve análisis del segundo punto.
+Te recomiendo leer el resumen de los doce puntos antes de continuar con este artículo.
+2.- Dependencias  Las aplicaciones no deben depender de que en el sistema donde se ejecuten existan librerías especificas instaladas (p.ej. mi programa necesita que instales direct x versión 10."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://mcclone2001.github.io/blog" class="f3 fw2 hover-white no-underline white-90 dib">
+      El blog de Iván Quiñones
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://mcclone2001.github.io/blog/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">The Twelve Factor App - Dependencias</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-04-09T21:12:04-06:00">April 9, 2019</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p><a href="https://12factor.net/">&ldquo;The twelve-factor app&rdquo;</a> es una metodología para construir aplicaciones SaaS propuesta por Adam Wiggins co-fundador de Heroku, a finales del 2011.</p>
+
+<p>Esta publicación es un breve análisis del segundo punto.</p>
+
+<p>Te recomiendo leer el <a href="https://mcclone2001.github.io/blog/posts/ivanq-explora-the-twelve-factor-app/">resumen de los doce puntos</a> antes de continuar con este artículo.</p>
+
+<h2 id="2-dependencias">2.- Dependencias</h2>
+
+<blockquote>
+<p>Las aplicaciones no deben depender de que en el sistema donde se ejecuten existan librerías especificas instaladas (p.ej. mi programa necesita que instales direct x versión 10.0 para que pueda arrancar), ni deben depender de que exista paquetería específica instalada en el sistema (ImageMagick, 7zip, curl), dado que no existe la seguridad de que existan en todos los entornos donde se desplieguen.</p>
+
+<p>Todas sus dependencias deben estar especificadas en un manifiesto de declaración de dependencias (cómo el Package.json de NPM, ó el Composer.json de Composer)</p>
+
+<p>La aplicación también debe funcionar dentro de entornos aislados que no puedan afectar al sistema donde se ejecutan (cómo Virtualenv para Python)</p>
+</blockquote>
+
+<h2 id="gestores-de-dependencias">Gestores de dependencias</h2>
+
+<p>Si alguien ya lo hizo, no reinventes la rueda, ¡úsalo!</p>
+
+<p>El tiempo de desarrollo es valioso (y caro), es común que los equipos de todo tamaño hagan uso de librerías de terceros; es económico porque no necesitamos invertir en construir funcionalidades de uso general, en especial si las habilidades o el conocimiento requeridos no los tenemos en el equipo.</p>
+
+<p>Por ejemplo, no es necesario que un desarrollador invierta días en programar un script para cambiar el color de los caracteres en la salida estándar de una aplicación en NodeJs, para ello tendría que investigar cómo funciona la salida estándar en diferentes terminales (cmd.exe, bash, sh, etc.), mejor usa &lsquo;Chalk&rsquo;, lleva 1 minuto bajarlo y 2 aprender a usarlo.</p>
+
+<p>Además, el costo de mantenimiento es muy reducido, si se detecta una vulnerabilidad la comunidad de desarrolladores de las librerías reconocidas se hacen cargo. La comunidad misma busca mejorar el producto constantemente y se prueba en diversidad de entornos y casos de uso.</p>
+
+<p>Sin embargo, no todo es miel sobre hojuelas, al hacer uso de librerías de terceros, y salvo que participemos activamente en su desarrollo, tendremos que adecuarnos cuando estos decidan deprecar ciertas versiones, posponer la resolución de un bug o una funcionalidad nueva, o peor aún, cambiar la API.</p>
+
+<p>Y, además, los equipos de desarrollo de estas librerías son desarrolladores como todos nosotros, con limitaciones humanas, es posible que en un nuevo release se introduzcan bugs que puedan causar una caída de nuestro servicios.</p>
+
+<p>Así que, ¿qué podemos hacer ante estos escenarios?</p>
+
+<p>Necesitamos controlar las versiones de nuestras dependencias y sus dependencias, y las dependencias de sus dependencias, etcétera. Afortunadamente hoy en día es de los más sencillo, existen múltiples herramientas que nos dan esas facilidades.</p>
+
+<p>Composer, NPM, YARN, Gems, Nugget, PIP, Chocolate; todos son gestores de dependencias, su función es controlar un manifesto de dependencias y con base en él administrar cuales y que versión de las librerías se instalan en nuestro entorno.</p>
+
+<p>Tomemos como ejemplo Composer.</p>
+
+<p>Cuando quieres usar Composer para controlar las dependencias de un proyecto en PHP inicias ejecutando en el directorio del proyecto</p>
+
+<pre><code>composer init
+</code></pre>
+
+<p>Composer solicitará información relacionada al proyecto, nombre, descripción, autor, licencia, etcétera. Y creara un archivo <code>composer.json</code> donde guardara esta información, este es tu manifesto de dependencias.</p>
+
+<pre><code>{
+    &quot;name&quot;: &quot;MiProyecto&quot;,
+    &quot;type&quot;: &quot;project&quot;,
+    &quot;description&quot;: &quot;Un proyecto de prueba&quot;,
+    &quot;keywords&quot;: [
+        &quot;Pruebas&quot;
+    ],
+    &quot;license&quot;: &quot;MIT&quot;
+}
+</code></pre>
+
+<p>Para instalar una nueva librería puedes ejecutar</p>
+
+<pre><code>composer install laravel/laravel
+</code></pre>
+
+<p>Al ejecutarse buscará en un repositorio público, creará una carpeta <code>vendor</code>, y descargará en esta carpeta el código fuente de las librerías que deseas instalar y las de sus dependencias.</p>
+
+<p>También modificará el archivo <code>composer.json</code>, agregando una entrada donde describe que librería y que versión instalo.</p>
+
+<pre><code>{
+    &quot;name&quot;: &quot;MiProyecto&quot;,
+    &quot;type&quot;: &quot;project&quot;,
+    &quot;description&quot;: &quot;Un proyecto de prueba&quot;,
+    &quot;keywords&quot;: [
+        &quot;Pruebas&quot;
+    ],
+    &quot;license&quot;: &quot;MIT&quot;,
+    &quot;require&quot;: {
+        &quot;php&quot;: &quot;^7.1.3&quot;,
+        &quot;laravel/framework&quot;: &quot;5.8.*&quot;
+    }
+}
+</code></pre>
+
+<p>Así mismo, creará el archivo <code>composer.lock</code>, donde agregará no solo la librería instalada y su versión específica, sino también el listado de todas las librerías de las que depende la primera.</p>
+
+<p>Ahora imagina que pasan algunos meses y deseas compartir tu proyecto con otro desarrollador, esta persona podrá recibir tu código fuente y al ejecutar composer install descargará exactamente las mismas versiones de las librerías que tienes instaladas en tu entorno, sin importar que haya habido nuevos releases de las mismas.</p>
+
+<p>Esto permite que en los dos ambientes de trabajo tengamos la certeza de que se están ejecutando las versiones correctas de las librerías, en conjunto con contenedores los gestores de dependencias nos ayudan a minimizar los errores por configuraciones de los entornos de trabajo.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://mcclone2001.github.io/blog" >
+    &copy; 2019 El blog de Iván Quiñones
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://mcclone2001.github.io/blog/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
